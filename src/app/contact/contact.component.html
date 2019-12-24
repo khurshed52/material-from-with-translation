@@ -1,0 +1,11 @@
+
+<div class="contact" *ngIf="cont">
+  loading....
+<div>
+
+
+  <div class="contact" *ngFor="let contact of contacts">
+    <p>{{contact.place}}</p>
+    <p>{{contact.email}}</p>
+    <button (click)="getEmail(contact.email)"> check email </button>
+  </div>

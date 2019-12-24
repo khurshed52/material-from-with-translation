@@ -1,0 +1,39 @@
+<!-- <mat-radio-group>
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+<br>
+
+<mat-form-field>
+  <mat-select placeholder="Favorite food">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<div class="container-fluid"> 
+    <header class="row">
+        <div class="logo col-4">
+            <img src="https://gas.gov.ae/assets/images/gas-logo.png" alt="gas-logo">
+          </div>
+          <div class="col-6">
+            <nav>
+              <a routerLink="/home">Home</a>
+              <a routerLink="/about">About us </a>
+              <a routerLink="/contact">Contact us </a>
+              <a routerLink="/test"> Test </a>
+              <a routerLink="/login"> Login </a>
+            </nav>
+          </div>
+          <div class="col-2">
+              <button mat-raised-button color="accent" (click)="switchLanguage('en')" *ngIf="lang">English</button>
+              <button mat-raised-button color="accent" (click)="switchLanguage('ar')" *ngIf="!lang">عربي</button>
+          </div>
+    </header>
+    <router-outlet></router-outlet>
+</div>
+
+<div class="footer text-center">
+  {{'copyright' | translate}}
+</div>

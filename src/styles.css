@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url(//fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+body {
+    font-family: 'Droid Arabic Kufi','Open Sans',sans-serif!important;
+    margin: 0px;
+    padding: 0px;
+    direction: rtl;
+    text-align: right !important;
+    background: url('./assets/bg.png');
+    background-image: -webkit-gradient(linear,left bottom,left top,from(#5ee7df),to(#66a6ff));
+    background-image: linear-gradient(to top,#5ee7df 0,#66a6ff 100%);
+}
+
+body.english {  
+    direction: ltr;
+    text-align: left !important;
+}
+
+body.english .mat-form-field {
+    text-align: left;
+}
+
+.owl-carousel.owl-loaded {
+    direction: ltr;
+}
+
+.mat-form-field , .mat-checkbox, .mat-raised-button{
+    font-family: 'Droid Arabic Kufi','Open Sans',sans-serif!important;
+}
+
+.mat-raised-button {
+    font-size: 1.2em;
+}
+
+button:focus {
+    outline: 0px dotted !important;
+    outline: 0 !important;
+}
+
+.owl-theme .owl-dots .owl-dot{
+    display: block !important;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 10px;
+    position: absolute;
+    left: -43px;
+    top: 20%;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 7px 12px !important;
+    background: #ffffff !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #ffd401 !important;
+}
+
+button.owl-dot.active {
+    border: 1px solid #ffffff !important;
+    border-radius: 14px !important;
+}
+
+.owl-dots button {
+    width: 38px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    fill: #1c66a4;
+}
+
+.mat-raised-button.mat-accent {
+    background-color: #1c66a4;
+}
+
+.footer {
+    background: #1c66a4;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+.container-fluid {
+    width: 88.28125% !important;
+    margin: 0 5.859375%;
+}
+}
+
+@keyframes slideup {
+    from {
+      transform: translateY(50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  
+  }
+  
+  @keyframes slideright {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  
+  }

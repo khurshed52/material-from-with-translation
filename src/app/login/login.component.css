@@ -1,0 +1,83 @@
+.login-bg {
+    background: #fff;
+    -webkit-box-shadow: 0 0 12px 0 rgba(204,204,204,.74);
+    box-shadow: 0 0 8px 0 rgba(195,195,195,.74);
+}
+
+.banner-area {
+    background: #1c66a4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #65b5f9, #2584d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #65b5f9, #2584d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       
+padding: 1em 1em 2em 1em;
+position: relative;
+}
+
+/* .banner-area::after{
+    content: '';
+    display: block;
+    width: 80px;
+    height: 100%;
+    background: url('../../assets/curved.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: -30px;
+} */
+
+#bannerSlider {
+    top: 20px;
+    left: 31px;
+}
+
+#bannerSlider img {
+    width: 300px;
+}
+
+.banner-area h5 {
+ 
+    color: #ffffff;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    text-align: right;
+}
+
+mat-icon.mat-icon.material-icons{
+    color: #1c66a4 ;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    fill: #1c66a4;
+}
+
+.logo img {
+    margin-bottom: 1em;
+}
+
+.banner-area img {
+    width: 80%;
+}
+
+@media screen and (max-width:969px) {
+    .flex-container {
+        display: flex;
+    }
+    
+    .flex-container .flex-item:nth-of-type(1) {
+        order: 2;
+    }
+    
+    .flex-container .flex-item:nth-of-type(2) {
+        order: 1;
+    }
+}

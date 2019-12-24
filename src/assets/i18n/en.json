@@ -1,0 +1,17 @@
+{
+    "copyright": "Copyright ©2019 General Authority for Sports All Right Reserved",
+    "fname" : "First Name",
+    "lname" : "Last Name",
+    "email" : "Email",
+    "phone" : "Phone",
+    "birth" : "Date of birth",
+    "nationality" : "Nationality",
+    "register" : "Register",
+    "fNameRequired": "First Name is required",
+    "emailRequired": "Email is required",
+    "emailValid": "This Email is not valid",
+    "phoneRequired": "Mobile Number is required",
+    "birthRequired": "Date of Birth is required ",
+    "nationRequired": "Nationality is required ",
+    "workSave": "Your work has been saved"
+}

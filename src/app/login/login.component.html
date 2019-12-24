@@ -1,0 +1,156 @@
+<div class="row justify-content-center"> 
+  <div class="col-12">
+   <div class="row login-bg flex-container">
+     <div class="col-xl-6 col-lg-6 col-12 banner-area flex-item">
+       <!-- <div class="owl-carousel owl-theme" id="bannerSlider">
+         <div class="item">
+          <img src="assets/1.svg" alt="banner" />
+         </div>
+         <div class="item">
+            <img src="assets/2.svg" alt="banner" />
+          </div>
+          <div class="item">
+              <img src="assets/3.svg" alt="banner" />
+            </div> 
+       </div>-->
+       <img src="assets/3.svg" alt="banner"  *ngIf="banner" />
+       <img src="assets/sports-day.jpg" alt="banner" *ngIf="!banner" />
+     </div>
+     <div class="col-xl-6 col-lg-6 col-12 flex-item">
+       <form #registerForm="ngForm" (ngSubmit)="submit(registerForm)"> 
+          <div class="example-container">
+              <mat-form-field>
+                <input matInput placeholder="{{'fname' | translate}}" type="text" [(ngModel)]= "register.firstName" name="firstName" #firstName ="ngModel" required>
+                <mat-icon matSuffix>account_box</mat-icon>
+                <mat-error *ngIf="firstName.touched">
+                    <p *ngIf="firstName.errors?.required">{{'fNameRequired' | translate}}   </p>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <input matInput placeholder="{{'lname' | translate}}" type="text" [(ngModel)]= "register.lastName" name="lastName" #lastName ="ngModel">
+                  <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="{{'email' | translate}}" type="email"  [(ngModel)]= "register.email" name="email" 
+                    #email ="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="email.touched">
+                        <p *ngIf="email.errors?.required"> {{'emailRequired' | translate}}   </p>
+                        <p *ngIf="email.errors?.pattern">{{'emailValid' | translate}}   </p>
+                    </mat-error>
+                  </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="{{'phone' | translate}}" type="tel"  [(ngModel)]= "register.phone" name="phone" #phone ="ngModel" required>
+                    <mat-icon matSuffix>call</mat-icon>
+                    <mat-error *ngIf="phone.touched">
+                        <p *ngIf="phone.errors?.required"> {{'phoneRequired' | translate}}</p>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="{{'birth' | translate}}" [(ngModel)]= "register.date" name="date" #date ="ngModel" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="date.touched">
+                        <p *ngIf="date.errors?.required"> {{'birthRequired' | translate}}</p>
+                    </mat-error>
+                  </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>{{'nationality' | translate}}</mat-label>
+                        <mat-icon matSuffix>assignment_ind</mat-icon>
+                        <mat-select [(ngModel)]= "register.country" name="country" #country ="ngModel" required>
+                          <mat-option *ngFor="let country of countries" [value]="country">
+                            {{country}}
+                          </mat-option>
+                         </mat-select>
+                        <mat-error *ngIf="country.touched">
+                            <p *ngIf="country.errors?.required"> {{'nationRequired' | translate}} </p>
+                        </mat-error>
+                      </mat-form-field>
+                    
+              <!-- <mat-form-field>
+                  <input matInput placeholder="Password" type="password" [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                </mat-form-field> -->
+
+                   <div>
+                    <label class="btn btn-outline-secondary" *ngFor="let test of genders"  >
+                        <input type="checkbox" [value]="test.value" [(ngModel)]="register.gender" name="gender"> {{test.name}} 
+                      </label>
+                  </div>
+
+              <div class="row col-12">
+                <div> 
+                <mat-checkbox [(ngModel)]="register.isActive" #isActive="ngModel" name="isActive" required>
+                </mat-checkbox>
+                </div>
+                <div>
+                    <p data-toggle="modal" data-target="#termsModal"> Terms and conditions </p>
+                </div>
+                <mat-error *ngIf="isActive.touched && isActive.errors?.required">
+                    <p> Please select term and condtion </p> 
+                  </mat-error>
+              </div> 
+                <button type="submit" [disabled]="!registerForm.valid" mat-raised-button color="accent">{{'register' | translate}}</button>
+            </div>
+      </form>
+      </div>
+   </div>
+  </div>
+</div>
+
+
+<!--display data-->
+
+<table class="table">
+  <thead>
+    <tr>
+      <td> First Name </td>
+      <td> Last Name </td>
+      <td> Email </td>
+      <td> Phone </td>
+      <td> Date of Birth </td>
+      <td> Country </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of registerData">
+      <td> {{item.firstName}} </td>
+      <td> {{item.lastName}} </td>
+      <td> {{item.email}} </td>
+      <td> {{item.phone}}</td>
+      <td> {{item.date | date}}</td>
+      <td> {{item.country}}</td>
+    </tr>
+  </tbody>
+</table>
+
+    <!-- <angular2-multiselect
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems" 
+      [settings]="dropdownSettings">
+    </angular2-multiselect> -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

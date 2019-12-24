@@ -1,0 +1,56 @@
+<h1> {{ getCar }}</h1>
+<div *ngIf="loading else loaded">
+    loading...
+    </div>
+
+  <ng-template #loaded>
+      <ul>
+          <li *ngFor ="let post of posts | slice:1:3">
+            <p> {{post.id}} </p>  
+            <p> {{post.title | titlecase }} </p>
+          </li>
+        </ul>
+  </ng-template>
+
+
+  <form #testForm="ngForm" (ngSubmit)="submit(testForm)">
+    <div> 
+    <input type="text" [(ngModel)]="test.name" name="name" #name ="ngModel" required>
+  </div>
+  <div> 
+    <input type="email" [(ngModel)]="test.email" name="email" #email ="ngModel" required>
+  </div>
+  <div> 
+
+      <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of radioItems">
+            <input type="radio" [(ngModel)]="test.gender" name="gender" value="{{item.value}}"/> 
+            {{item.name}}
+          </li>
+    </ul>
+
+      <!-- <select [(ngModel)]="test.gender" name="gender"> 
+        <option [ngValue]="undefined" disabled>Select Gender</option>
+      <option> Male </option>
+      <option> Female </option>
+    </select> -->
+    </div>
+    <button type="submit" [disabled]="!testForm.valid"> submit </button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <td> Name </td>
+        <td> Email </td>
+        <td> Gender </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let test of testFrom | slice:1:3">
+        <td> {{test.name}} </td>
+        <td> {{test.email}} </td>
+        <td> {{test.gender}} </td>
+      </tr>
+    </tbody>
+  </table>
